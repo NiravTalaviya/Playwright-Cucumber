@@ -1,4 +1,5 @@
 Feature: Log out
+
 @focus 
     Scenario Outline: Succesful logout
         Given User launched eshop login page

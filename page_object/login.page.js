@@ -31,7 +31,6 @@ class LoginPage {
     
 
     async loginFailed(){
-        await page.waitForNavigation({timeout: 5000})
         await page.waitForSelector('text=Forgot password')
         // await page.waitForSelector('[class="MuiTypography-root MuiTypography-caption MuiTypography-colorSecondary MuiTypography-alignCenter"]');
         // let error = await page.$eval('[class="MuiTypography-root MuiTypography-caption MuiTypography-colorSecondary MuiTypography-alignCenter"]', (errortext) => errortext.textContent);
