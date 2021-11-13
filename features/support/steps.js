@@ -23,6 +23,7 @@ When('User logged in eshop using the invalid emailid {string} and the invalid pa
 Given('User is already logged in', async () =>{
     await loginpage.navigate();
     await loginpage.login("test@mydomain.com","Test@123");
+    // await loginpage.loginSuccessful()
 });
 
 Then('User should be logged in', async()=>{

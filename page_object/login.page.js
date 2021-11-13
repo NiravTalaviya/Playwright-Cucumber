@@ -4,7 +4,9 @@ const { expect } = require("chai");
 class LoginPage {
 
     async navigate() {
-        page.goto('http://localhost:3000')
+        await page.goto('http://localhost:3000')
+
+        await page.waitForSelector('text=Log In')
     }
 
     async login(username, password) {
@@ -18,11 +20,13 @@ class LoginPage {
         await page.fill('#password',password);
     
         // Click on Continue button
-        await page.click('button:nth-child(1)')
+        await Promise.all[
+            page.waitForNavigation({timeout: 30000}),
+            page.click('button:nth-child(1)')
+        ]
     }
 
     async loginSuccessful(){ 
-        // await page.waitForNavigation({timeout: 5000})
         await page.waitForSelector('text=Log Out')
         //await page.$('input[aria-label="Product search"]');
         //expect (element).to.not.be.null;
@@ -37,6 +41,7 @@ class LoginPage {
     }
 
     async logout(){
+        await page.waitForSelector('text=Log Out')
         await page.click('text=Log Out')
         // await page.waitForNavigation({timeout: 10000})
     }

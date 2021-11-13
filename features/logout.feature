@@ -10,7 +10,7 @@ Feature: Log out
         Examples:
         | EmailID                    | Password  |
         | test@mydomain.com | Test@123 |
-
+@focus 
     Scenario Outline: Succesful logout shorter version
         Given User is already logged in
         And User clicks on logout button
