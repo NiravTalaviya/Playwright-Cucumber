@@ -13,17 +13,17 @@ class LoginPage {
         await page.waitForSelector('text=Log In')
 
         // Click on Login Button
-        await page.click('text="Log In"')
+        await Promise.all[
+            page.waitForNavigation({timeout: 30000}),
+            page.click('text="Log In"')
+        ]
         
         // Fill username and password
         await page.fill('#username',username);
         await page.fill('#password',password);
     
         // Click on Continue button
-        await Promise.all[
-            page.waitForNavigation({timeout: 30000}),
-            page.click('button:nth-child(1)')
-        ]
+        page.click('button:nth-child(1)')
     }
 
     async loginSuccessful(){ 
@@ -42,7 +42,10 @@ class LoginPage {
 
     async logout(){
         await page.waitForSelector('text=Log Out')
-        await page.click('text=Log Out')
+        await Promise.all[
+            page.waitForNavigation({timeout: 30000}),
+            page.click('text="Log Out"')
+        ]
         // await page.waitForNavigation({timeout: 10000})
     }
 
