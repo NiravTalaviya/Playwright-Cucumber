@@ -23,7 +23,7 @@ class LoginPage {
         
         await console.log("Loggin in")
         await console.log(url)
-        const loc = await page.$('text="Log outd"') 
+        const loc = await page.$('text="Log out"') 
 
     }
 

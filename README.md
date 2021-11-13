@@ -21,6 +21,7 @@ Define the scripts in package.json as follows :
   }
 ```
 Finally execute the tests with `npm test`
+* To run tests in debug mode: `DEBUG=pw:api ./node_modules/.bin/cucumber-js --tags @focus`
 
 ### Create a global browser for the test session
 ```Javascript
