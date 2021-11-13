@@ -23,6 +23,7 @@ class LoginPage {
     }
 
     async loginSuccessful(){ 
+        await page.waitForNavigation({timeout: 5000})
         await page.waitForSelector('text=Log Out')
         //await page.$('input[aria-label="Product search"]');
         //expect (element).to.not.be.null;
@@ -30,10 +31,22 @@ class LoginPage {
     
 
     async loginFailed(){
+        await page.waitForNavigation({timeout: 5000})
         await page.waitForSelector('text=Forgot password')
         // await page.waitForSelector('[class="MuiTypography-root MuiTypography-caption MuiTypography-colorSecondary MuiTypography-alignCenter"]');
         // let error = await page.$eval('[class="MuiTypography-root MuiTypography-caption MuiTypography-colorSecondary MuiTypography-alignCenter"]', (errortext) => errortext.textContent);
         // expect (error).to.include("Customer not found")
+    }
+
+    async logout(){
+        await page.click('text=Log Out')
+        // await page.waitForNavigation({timeout: 10000})
+    }
+
+    async logOutSuccessful(){
+        // await page.waitForNavigation({timeout: 10000})
+        await console.log(page.url() + "Debug")
+        await page.waitForSelector('text=Log In')
     }
 
     async createAccount(fname,lname,email,password){

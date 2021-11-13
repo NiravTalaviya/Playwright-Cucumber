@@ -13,7 +13,7 @@ Given('User launched eshop login page', async()=>{
  });
 
 When('User logged in eshop using the valid emailid {string} and the valid password {string}', async (email, password) =>{
-    await loginpage.login(email,password); 
+    await loginpage.login(email,password);
 });
 
 When('User logged in eshop using the invalid emailid {string} and the invalid password {string}',async(username,password) =>{
@@ -24,14 +24,21 @@ Then('User should be logged in', async()=>{
     await loginpage.loginSuccessful();
 });
 
-
-Then('User should not be logged in', async()=>{
+Then('User should fail', async()=>{
     await loginpage.loginFailed();
 });
 
+When("User is logged in", async ()=> {
+    await loginpage.loginSuccessful();
+});
 
+When("User clicks on logout button", async()=> {
+    await loginpage.logout()
+});
 
-
+Then("User is logged out", async()=> {
+    await loginpage.logOutSuccessful()
+});
 
 When('User create account with {string}, {string}, {string} and {string}', async(fname, lname, email, password) => {
     let random = Math.floor(Math.random()*90000) + 10000;
