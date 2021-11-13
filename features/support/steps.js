@@ -20,6 +20,11 @@ When('User logged in eshop using the invalid emailid {string} and the invalid pa
     await loginpage.login(username,password);
 });
 
+Given('User is already logged in', async () =>{
+    await loginpage.navigate();
+    await loginpage.login("test@mydomain.com","Test@123");
+});
+
 Then('User should be logged in', async()=>{
     await loginpage.loginSuccessful();
 });
@@ -28,7 +33,7 @@ Then('User should fail', async()=>{
     await loginpage.loginFailed();
 });
 
-When("User is logged in", async ()=> {
+When("User is logged in successfully", async ()=> {
     await loginpage.loginSuccessful();
 });
 
@@ -38,39 +43,4 @@ When("User clicks on logout button", async()=> {
 
 Then("User is logged out", async()=> {
     await loginpage.logOutSuccessful()
-});
-
-When('User create account with {string}, {string}, {string} and {string}', async(fname, lname, email, password) => {
-    let random = Math.floor(Math.random()*90000) + 10000;
-    email = email.replace('Ashish','Ashish'+random);
-    await loginpage.createAccount(fname,lname,email,password);
-});
-
-Then('User account should get created', async()=> {
-    await loginpage.loginSuccessful();
-});
-
-When('User searches for the {string}', async (item) =>{
-    await productpage.searchProduct(item);
-    await productpage.productSearchSuccessful(item);
-});
-
-When('User adds {string} product to the cart', async (item) =>{
-    await productpage.addProduct(item);
-});
-
-Then('User should be able to view and add the listed product {string}', async (item) =>{
-    await productpage.productAddSuccessful(item);
-});
-
-Given('User enters Address details with {string},{string}, {string}, {string},{string},{string},{string}, {string}', async (title,fname,lname,addr1,addr2,city,state,zip)=> {
-    await paymentpage.enterAddressDetails(title,fname,lname,addr1,addr2,city,state,zip);
-});
-
-Given('User enters Payment details with {string}, {string}, {string},{string},{string}', async(cardNo,name,month,year,code) => {
-    await paymentpage.enterPaymentDetails(cardNo,name,month,year,code);
-});
- 
-Then('User should get the Confirmation of Order', async ()=> {
-    await page.screenshot({ path: 'page.png', fullPage: true });
 });
