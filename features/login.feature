@@ -18,6 +18,7 @@ Feature: Login
   #    | EmailID           | Password    |
   #    | Ashish@shop.com   | Ashishpwd$1 |
 
+  @focus
   Scenario Outline: Login to the E-Shop Application with Wrong Password
     Given User launched eshop login page
     When User logged in eshop using the invalid emailid "<EmailID>" and the invalid password "<Password>"
@@ -25,4 +26,4 @@ Feature: Login
 
     Examples:
       | EmailID                    | Password  |
-      | testuser_negative@shop.com | Testing$1 |
+      | test@mydomain.com | Test@123 |

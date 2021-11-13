@@ -1,4 +1,4 @@
-const {Given, When, Then} = require ('cucumber')
+const {Given, When, Then} = require ('@cucumber/cucumber')
 const {LoginPage} = require('../../page_object/login.page')
 const {ProductPage} = require('../../page_object/product.page')
 const {PaymentPage} = require('../../page_object/payment.page')
@@ -58,4 +58,3 @@ Given('User enters Payment details with {string}, {string}, {string},{string},{s
 Then('User should get the Confirmation of Order', async ()=> {
     await page.screenshot({ path: 'page.png', fullPage: true });
 });
-
