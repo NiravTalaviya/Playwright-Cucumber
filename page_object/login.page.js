@@ -9,30 +9,28 @@ class LoginPage {
     }
 
     async login(username, password) {
+        await page.waitForSelector('text=Log In')
+
+        // Click on Login Button
         await page.click('text="Log In"')
+        
         // Fill username and password
         await page.fill('#username',username);
         await page.fill('#password',password);
-
-        await page.waitForSelector('#username')
-        await page.waitForSelector('text=Log In')
     
         // Click on Continue button
         await page.click('button:nth-child(1)')
-    
-        await page.waitForSelector('text=Log Out')
-
     }
 
     async loginSuccessful(){ 
-        //await page.$('input[aria-label="Product search"]');
         await page.waitForSelector('text=Log Out')
+        //await page.$('input[aria-label="Product search"]');
         //expect (element).to.not.be.null;
     }
     
 
     async loginFailed(){
-        console.log("Log in failed")
+        await page.waitForSelector('text=Forgot password')
         // await page.waitForSelector('[class="MuiTypography-root MuiTypography-caption MuiTypography-colorSecondary MuiTypography-alignCenter"]');
         // let error = await page.$eval('[class="MuiTypography-root MuiTypography-caption MuiTypography-colorSecondary MuiTypography-alignCenter"]', (errortext) => errortext.textContent);
         // expect (error).to.include("Customer not found")

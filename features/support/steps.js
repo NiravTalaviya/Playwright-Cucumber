@@ -12,6 +12,10 @@ Given('User launched eshop login page', async()=>{
     await loginpage.navigate();
  });
 
+When('User logged in eshop using the valid emailid {string} and the valid password {string}', async (email, password) =>{
+    await loginpage.login(email,password); 
+});
+
 When('User logged in eshop using the invalid emailid {string} and the invalid password {string}',async(username,password) =>{
     await loginpage.login(username,password);
 });
@@ -19,6 +23,15 @@ When('User logged in eshop using the invalid emailid {string} and the invalid pa
 Then('User should be logged in', async()=>{
     await loginpage.loginSuccessful();
 });
+
+
+Then('User should not be logged in', async()=>{
+    await loginpage.loginFailed();
+});
+
+
+
+
 
 When('User create account with {string}, {string}, {string} and {string}', async(fname, lname, email, password) => {
     let random = Math.floor(Math.random()*90000) + 10000;
@@ -28,10 +41,6 @@ When('User create account with {string}, {string}, {string} and {string}', async
 
 Then('User account should get created', async()=> {
     await loginpage.loginSuccessful();
-});
-
-When('User logged in eshop using the valid emailid {string} and the valid password {string}', async (email, password) =>{
-    await loginpage.alreadyLoggedin(email,password); 
 });
 
 When('User searches for the {string}', async (item) =>{
