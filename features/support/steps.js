@@ -16,8 +16,8 @@ When('User logged in eshop using the invalid emailid {string} and the invalid pa
     await loginpage.login(username,password);
 });
 
-Then('User should not get logged in', async()=>{
-    await loginpage.loginFailed();
+Then('User should be logged in', async()=>{
+    await loginpage.loginSuccessful();
 });
 
 When('User create account with {string}, {string}, {string} and {string}', async(fname, lname, email, password) => {

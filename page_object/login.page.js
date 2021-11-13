@@ -1,5 +1,6 @@
+// import { expect } from "@playwright/test";
 const { expect } = require("chai");
-
+//const { expect } = require("@playwright/test")
 class LoginPage {
 
     async navigate() {
@@ -8,24 +9,27 @@ class LoginPage {
     }
 
     async login(username, password) {
-        await Promise.all[
-            page.waitForNavigation({timeout: 10000}),
-            page.click('text="Log In"')
-        ]
+        await page.click('text="Log In"')
+        // Fill username and password
         await page.fill('#username',username);
         await page.fill('#password',password);
-        const text = await page.$('button')
+
+        await page.waitForSelector('#username')
+        await page.waitForSelector('text=Log In')
     
+        // Click on Continue button
         await page.click('button:nth-child(1)')
     
-    
-        const url = await page.url()
-        
-        await console.log("Loggin in")
-        await console.log(url)
-        const loc = await page.$('text="Log out"') 
+        await page.waitForSelector('text=Log Out')
 
     }
+
+    async loginSuccessful(){ 
+        //await page.$('input[aria-label="Product search"]');
+        await page.waitForSelector('text=Log Out')
+        //expect (element).to.not.be.null;
+    }
+    
 
     async loginFailed(){
         console.log("Log in failed")
@@ -46,10 +50,7 @@ class LoginPage {
             page.click('text="Create Your E-Shop Account"')
         ]);
     }
-    async loginSuccessful(){ 
-        await page.$('input[aria-label="Product search"]');
-        //expect (element).to.not.be.null;
-    }
+
     async alreadyLoggedin(email,password){
         let random = Math.floor(Math.random()*90000) + 10000;
         email = email.replace('Ashish','Ashish'+random);

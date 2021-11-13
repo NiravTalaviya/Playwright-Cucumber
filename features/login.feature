@@ -19,10 +19,10 @@ Feature: Login
   #    | Ashish@shop.com   | Ashishpwd$1 |
 
   @focus
-  Scenario Outline: Login to the E-Shop Application with Wrong Password
+  Scenario Outline: Login to the E-Shop Application with Correct Password
     Given User launched eshop login page
     When User logged in eshop using the invalid emailid "<EmailID>" and the invalid password "<Password>"
-    Then User should not get logged in
+    Then User should be logged in
 
     Examples:
       | EmailID                    | Password  |
