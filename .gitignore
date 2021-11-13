@@ -71,3 +71,5 @@ typings/
 .report/*.log
 .report/*.json
 .report/*.xml
+
+videos/*
