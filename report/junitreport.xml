@@ -1,0 +1,54 @@
+<testsuites>
+    <testsuite name="login;login-to-the-e-shop-application-with-correct-password" tests="5" failures="0" errors="0" skipped="0" timestamp="Mon, 15 Nov 2021 19:53:21 GMT" time="6.316000000000001">
+        <testcase name="Beforeundefined" classname="login;login-to-the-e-shop-application-with-correct-password" time="0.072">
+        </testcase>
+        <testcase name="Given User launched eshop login page" classname="login;login-to-the-e-shop-application-with-correct-password" time="2.08">
+        </testcase>
+        <testcase name="When User logged in eshop using the valid emailid &quot;test@mydomain.com&quot; and the valid password &quot;Test@123&quot;" classname="login;login-to-the-e-shop-application-with-correct-password" time="1.44">
+        </testcase>
+        <testcase name="Then User should be logged in" classname="login;login-to-the-e-shop-application-with-correct-password" time="2.702">
+        </testcase>
+        <testcase name="Afterundefined" classname="login;login-to-the-e-shop-application-with-correct-password" time="0.022">
+        </testcase>
+    </testsuite>
+    <testsuite name="login;login-to-the-e-shop-application-with-wrong-password" tests="5" failures="0" errors="0" skipped="0" timestamp="Mon, 15 Nov 2021 19:53:21 GMT" time="4.667">
+        <testcase name="Beforeundefined" classname="login;login-to-the-e-shop-application-with-wrong-password" time="0.145">
+        </testcase>
+        <testcase name="Given User launched eshop login page" classname="login;login-to-the-e-shop-application-with-wrong-password" time="2.624">
+        </testcase>
+        <testcase name="When User logged in eshop using the invalid emailid &quot;test@mydomain.com&quot; and the invalid password &quot;Test@1234&quot;" classname="login;login-to-the-e-shop-application-with-wrong-password" time="1.866">
+        </testcase>
+        <testcase name="Then User should fail" classname="login;login-to-the-e-shop-application-with-wrong-password" time="0.019">
+        </testcase>
+        <testcase name="Afterundefined" classname="login;login-to-the-e-shop-application-with-wrong-password" time="0.013">
+        </testcase>
+    </testsuite>
+    <testsuite name="log-out;succesful-logout-longer-version" tests="7" failures="0" errors="0" skipped="0" timestamp="Mon, 15 Nov 2021 19:53:21 GMT" time="7.122">
+        <testcase name="Beforeundefined" classname="log-out;succesful-logout-longer-version" time="0.204">
+        </testcase>
+        <testcase name="Given User launched eshop login page" classname="log-out;succesful-logout-longer-version" time="1.932">
+        </testcase>
+        <testcase name="When User logged in eshop using the valid emailid &quot;test@mydomain.com&quot; and the valid password &quot;Test@123&quot;" classname="log-out;succesful-logout-longer-version" time="1.186">
+        </testcase>
+        <testcase name="And User is logged in successfully" classname="log-out;succesful-logout-longer-version" time="2.182">
+        </testcase>
+        <testcase name="And User clicks on logout button" classname="log-out;succesful-logout-longer-version" time="0.032">
+        </testcase>
+        <testcase name="Then User is logged out" classname="log-out;succesful-logout-longer-version" time="1.537">
+        </testcase>
+        <testcase name="Afterundefined" classname="log-out;succesful-logout-longer-version" time="0.049">
+        </testcase>
+    </testsuite>
+    <testsuite name="log-out;succesful-logout-shorter-version" tests="5" failures="0" errors="0" skipped="0" timestamp="Mon, 15 Nov 2021 19:53:21 GMT" time="7.559">
+        <testcase name="Beforeundefined" classname="log-out;succesful-logout-shorter-version" time="0.128">
+        </testcase>
+        <testcase name="Given User is already logged in" classname="log-out;succesful-logout-shorter-version" time="4.272">
+        </testcase>
+        <testcase name="And User clicks on logout button" classname="log-out;succesful-logout-shorter-version" time="2.411">
+        </testcase>
+        <testcase name="Then User is logged out" classname="log-out;succesful-logout-shorter-version" time="0.719">
+        </testcase>
+        <testcase name="Afterundefined" classname="log-out;succesful-logout-shorter-version" time="0.029">
+        </testcase>
+    </testsuite>
+</testsuites>
